@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Givlit – Verschenke es. Rette den Planeten.</title>
+<meta name="description" content="Givlit ist die kostenlose App, um Dinge, die du nicht mehr brauchst, an Menschen in deiner Nähe weiterzugeben. Nachhaltig, einfach, kostenlos." />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0D1117;
+    color: #E6EDF3;
+    line-height: 1.6;
+  }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(13,17,23,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #21262D;
+  }
+  nav .wrap { display: flex; align-items: center; padding: 14px 24px; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #E6EDF3; text-decoration: none; }
+  .brand-dot { width: 30px; height: 30px; background: #00E676; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0D1117; font-size: 15px; }
+  nav .links { margin-left: auto; display: flex; gap: 24px; align-items: center; }
+  nav .links a { color: #8B949E; text-decoration: none; font-size: 14px; }
+  nav .links a:hover { color: #E6EDF3; }
+  .lang-toggle { display: flex; gap: 4px; }
+  .lang-toggle button { background: #161B22; border: 1px solid #30363D; color: #8B949E; font-size: 12px; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+  .lang-toggle button.active { background: #00E676; color: #0D1117; border-color: #00E676; font-weight: 700; }
+
+  header.hero { padding: 80px 0 60px; position: relative; overflow: hidden; }
+  .glow { position: absolute; width: 500px; height: 500px; background: #00E676; opacity: 0.06; border-radius: 50%; filter: blur(40px); top: -150px; right: -100px; pointer-events: none; }
+  .hero-inner { text-align: center; max-width: 680px; margin: 0 auto; position: relative; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,230,118,0.1); color: #00E676; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
+  h1 { font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
+  h1 span { color: #00E676; }
+  .subtitle { font-size: 18px; color: #8B949E; margin-bottom: 36px; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: transform 0.15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: #00E676; color: #0D1117; }
+  .btn-secondary { background: #161B22; color: #E6EDF3; border: 1px solid #30363D; }
+  .soon-note { font-size: 13px; color: #6E7681; }
+
+  section.features { padding: 70px 0; border-top: 1px solid #21262D; }
+  .section-title { text-align: center; font-size: 30px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .section-sub { text-align: center; color: #8B949E; font-size: 16px; margin-bottom: 48px; }
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; } h1 { font-size: 34px; } }
+  .feature-card { background: #161B22; border: 1px solid #21262D; border-radius: 14px; padding: 28px 24px; }
+  .feature-icon { width: 44px; height: 44px; background: rgba(0,230,118,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 22px; }
+  .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .feature-card p { font-size: 14px; color: #8B949E; }
+
+  section.how { padding: 70px 0; border-top: 1px solid #21262D; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+  .step { text-align: center; position: relative; }
+  .step-num { width: 36px; height: 36px; background: #00E676; color: #0D1117; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; margin: 0 auto 16px; }
+  .step h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .step p { font-size: 13px; color: #8B949E; }
+
+  section.impact { padding: 70px 0; border-top: 1px solid #21262D; }
+  .impact-card { background: linear-gradient(135deg, rgba(0,230,118,0.08), rgba(0,230,118,0.02)); border: 1px solid rgba(0,230,118,0.2); border-radius: 18px; padding: 48px; text-align: center; }
+  .impact-card h2 { font-size: 26px; font-weight: 700; margin-bottom: 14px; }
+  .impact-card p { font-size: 15px; color: #8B949E; max-width: 560px; margin: 0 auto; }
+  .impact-stats { display: flex; justify-content: center; gap: 48px; margin-top: 32px; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 700; color: #00E676; }
+  .stat-label { font-size: 13px; color: #8B949E; margin-top: 4px; }
+
+  footer { border-top: 1px solid #21262D; padding: 40px 0; margin-top: 40px; }
+  .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: #8B949E; text-decoration: none; font-size: 13px; }
+  .footer-links a:hover { color: #E6EDF3; }
+  .footer-copy { font-size: 13px; color: #6E7681; }
+
+  .lang-block { display: none; }
+  .lang-block.visible { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="brand">
+      <span class="brand-dot">G</span>
+      Givlit
+    </a>
+    <div class="links">
+      <a href="#features" class="lt-de">Funktionen</a>
+      <a href="#features" class="lt-en" style="display:none">Features</a>
+      <a href="#how" class="lt-de">So funktioniert's</a>
+      <a href="#how" class="lt-en" style="display:none">How it works</a>
+      <a href="privacy-policy.html" class="lt-de">Datenschutz</a>
+      <a href="privacy-policy.html" class="lt-en" style="display:none">Privacy</a>
+      <div class="lang-toggle">
+        <button class="active" onclick="setLang('de', this)">DE</button>
+        <button onclick="setLang('en', this)">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="glow"></div>
+  <div class="wrap hero-inner">
+
+    <div class="lang-block visible" id="hero-de">
+      <div class="eyebrow">🌱 Kostenlos &amp; nachhaltig</div>
+      <h1>Verschenke es.<br><span>Rette den Planeten.</span></h1>
+      <p class="subtitle">Givlit hilft dir, Dinge, die du nicht mehr brauchst, kostenlos an Menschen in deiner Nähe weiterzugeben — statt sie wegzuwerfen.</p>
+      <div class="cta-row">
+        <a href="#" class="btn btn-primary">📲 Bald im Play Store</a>
+        <a href="#how" class="btn btn-secondary">So funktioniert's</a>
+      </div>
+      <p class="soon-note">Aktuell in der Beta-Phase · Android zuerst, iOS folgt</p>
+    </div>
+
+    <div class="lang-block" id="hero-en">
+      <div class="eyebrow">🌱 Free &amp; sustainable</div>
+      <h1>Give it away.<br><span>Save the planet.</span></h1>
+      <p class="subtitle">Givlit helps you give away things you no longer need — for free, to people nearby — instead of throwing them out.</p>
+      <div class="cta-row">
+        <a href="#" class="btn btn-primary">📲 Coming soon to Play Store</a>
+        <a href="#how" class="btn btn-secondary">How it works</a>
+      </div>
+      <p class="soon-note">Currently in beta · Android first, iOS to follow</p>
+    </div>
+
+  </div>
+</header>
+
+<section class="features" id="features">
+  <div class="wrap">
+
+    <div class="lang-block visible" id="features-de">
+      <h2 class="section-title">Warum Givlit?</h2>
+      <p class="section-sub">Einfach. Lokal. Nachhaltig.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>In deiner Nähe</h3>
+          <p>Finde kostenlose Artikel direkt in deiner Umgebung — übersichtlich auf der Karte.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Direkter Kontakt</h3>
+          <p>Schreibe dem Anbieter direkt in der App — ohne Umwege, ohne Registrierung bei Dritten.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌳</div>
+          <h3>Bäume pflanzen</h3>
+          <p>Sammle Grüne Punkte für jeden Artikel, den du weitergibst. Ab 750 Punkten pflanzen wir einen echten Baum in deinem Namen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-block" id="features-en">
+      <h2 class="section-title">Why Givlit?</h2>
+      <p class="section-sub">Simple. Local. Sustainable.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>Near you</h3>
+          <p>Find free items right around you — laid out clearly on an interactive map.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Direct contact</h3>
+          <p>Message the owner directly inside the app — no detours, no third-party sign-ups.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌳</div>
+          <h3>Plant real trees</h3>
+          <p>Earn Green Points for every item you give away. At 750 points, we plant a real tree in your name.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+
+    <div class="lang-block visible" id="how-de">
+      <h2 class="section-title">So funktioniert's</h2>
+      <p class="section-sub">In vier einfachen Schritten</p>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><h4>Foto aufnehmen</h4><p>Mach ein Bild vom Artikel, den du weitergeben möchtest.</p></div>
+        <div class="step"><div class="step-num">2</div><h4>Kurz beschreiben</h4><p>Kategorie wählen, Beschreibung eingeben — fertig.</p></div>
+        <div class="step"><div class="step-num">3</div><h4>In Kontakt treten</h4><p>Interessenten melden sich direkt über die App-Chatfunktion.</p></div>
+        <div class="step"><div class="step-num">4</div><h4>Abholen lassen</h4><p>Übergib den Artikel — kein Wegwerfen, kein Aufwand.</p></div>
+      </div>
+    </div>
+
+    <div class="lang-block" id="how-en">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Four simple steps</p>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><h4>Take a photo</h4><p>Snap a picture of the item you want to give away.</p></div>
+        <div class="step"><div class="step-num">2</div><h4>Add a description</h4><p>Pick a category, write a short description — done.</p></div>
+        <div class="step"><div class="step-num">3</div><h4>Get in touch</h4><p>Interested people message you directly via the in-app chat.</p></div>
+        <div class="step"><div class="step-num">4</div><h4>Hand it over</h4><p>Give the item away — no waste, no hassle.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="impact">
+  <div class="wrap">
+
+    <div class="lang-block visible" id="impact-de">
+      <div class="impact-card">
+        <h2>Dein Impact zählt 🌍</h2>
+        <p>Jeder weitergegebene Artikel spart CO₂. Givlit berechnet deinen persönlichen Beitrag zum Umweltschutz und belohnt dich dafür.</p>
+        <div class="impact-stats">
+          <div class="stat"><div class="stat-num">750</div><div class="stat-label">Punkte = 1 Baum</div></div>
+          <div class="stat"><div class="stat-num">0 €</div><div class="stat-label">Für immer kostenlos</div></div>
+          <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Lokal &amp; nachhaltig</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-block" id="impact-en">
+      <div class="impact-card">
+        <h2>Your impact counts 🌍</h2>
+        <p>Every item passed on saves CO₂. Givlit calculates your personal environmental contribution and rewards you for it.</p>
+        <div class="impact-stats">
+          <div class="stat"><div class="stat-num">750</div><div class="stat-label">points = 1 tree</div></div>
+          <div class="stat"><div class="stat-num">€0</div><div class="stat-label">Free forever</div></div>
+          <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Local &amp; sustainable</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-copy">© 2025 Givlit · Frankfurt am Main, Germany</div>
+    <div class="footer-links">
+      <a href="privacy-policy.html" class="lt-de">Datenschutz</a>
+      <a href="privacy-policy.html" class="lt-en" style="display:none">Privacy Policy</a>
+      <a href="mailto:info@givlit.de">info@givlit.de</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang, btn) {
+    document.querySelectorAll('.lang-block').forEach(function(el) {
+      el.classList.remove('visible');
+    });
+    ['hero','features','how','impact'].forEach(function(section) {
+      document.getElementById(section + '-' + lang).classList.add('visible');
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active');
+
+    document.querySelectorAll('.lt-de').forEach(function(el) {
+      el.style.display = lang === 'de' ? '' : 'none';
+    });
+    document.querySelectorAll('.lt-en').forEach(function(el) {
+      el.style.display = lang === 'en' ? '' : 'none';
+    });
+
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
