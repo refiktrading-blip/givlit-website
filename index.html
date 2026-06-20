@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Givlit – Verschenke es. Rette den Planeten.</title>
 <meta name="description" content="Givlit ist die kostenlose App, um Dinge, die du nicht mehr brauchst, an Menschen in deiner Nähe weiterzugeben. Nachhaltig, einfach, kostenlos." />
+<link rel="icon" type="image/png" href="givlit-logo.png" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -25,7 +26,7 @@
   }
   nav .wrap { display: flex; align-items: center; padding: 14px 24px; gap: 12px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #E6EDF3; text-decoration: none; }
-  .brand-dot { width: 30px; height: 30px; background: #00E676; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0D1117; font-size: 15px; }
+  .brand-logo { width: 32px; height: 32px; border-radius: 8px; display: block; }
   nav .links { margin-left: auto; display: flex; gap: 24px; align-items: center; }
   nav .links a { color: #8B949E; text-decoration: none; font-size: 14px; }
   nav .links a:hover { color: #E6EDF3; }
@@ -36,6 +37,7 @@
   header.hero { padding: 80px 0 60px; position: relative; overflow: hidden; }
   .glow { position: absolute; width: 500px; height: 500px; background: #00E676; opacity: 0.06; border-radius: 50%; filter: blur(40px); top: -150px; right: -100px; pointer-events: none; }
   .hero-inner { text-align: center; max-width: 680px; margin: 0 auto; position: relative; }
+  .hero-logo { width: 84px; height: 84px; border-radius: 20px; margin: 0 auto 28px; display: block; box-shadow: 0 8px 32px rgba(0,230,118,0.18); }
   .eyebrow { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,230,118,0.1); color: #00E676; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
   h1 { font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
   h1 span { color: #00E676; }
@@ -90,7 +92,7 @@
 <nav>
   <div class="wrap">
     <a href="#" class="brand">
-      <span class="brand-dot">G</span>
+      <img src="givlit-logo.png" alt="Givlit Logo" class="brand-logo" />
       Givlit
     </a>
     <div class="links">
@@ -113,6 +115,7 @@
   <div class="wrap hero-inner">
 
     <div class="lang-block visible" id="hero-de">
+      <img src="givlit-logo.png" alt="Givlit Logo" class="hero-logo" />
       <div class="eyebrow">🌱 Kostenlos &amp; nachhaltig</div>
       <h1>Verschenke es.<br><span>Rette den Planeten.</span></h1>
       <p class="subtitle">Givlit hilft dir, Dinge, die du nicht mehr brauchst, kostenlos an Menschen in deiner Nähe weiterzugeben — statt sie wegzuwerfen.</p>
@@ -124,6 +127,7 @@
     </div>
 
     <div class="lang-block" id="hero-en">
+      <img src="givlit-logo.png" alt="Givlit Logo" class="hero-logo" />
       <div class="eyebrow">🌱 Free &amp; sustainable</div>
       <h1>Give it away.<br><span>Save the planet.</span></h1>
       <p class="subtitle">Givlit helps you give away things you no longer need — for free, to people nearby — instead of throwing them out.</p>
