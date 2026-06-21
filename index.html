@@ -28,11 +28,27 @@
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #E6EDF3; text-decoration: none; }
   .brand-logo { width: 32px; height: 32px; border-radius: 8px; display: block; }
   nav .links { margin-left: auto; display: flex; gap: 24px; align-items: center; }
-  nav .links a { color: #8B949E; text-decoration: none; font-size: 14px; }
+  nav .links a { color: #8B949E; text-decoration: none; font-size: 14px; white-space: nowrap; }
   nav .links a:hover { color: #E6EDF3; }
   .lang-toggle { display: flex; gap: 4px; }
   .lang-toggle button { background: #161B22; border: 1px solid #30363D; color: #8B949E; font-size: 12px; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
   .lang-toggle button.active { background: #00E676; color: #0D1117; border-color: #00E676; font-weight: 700; }
+
+  .nav-burger { display: none; background: none; border: 1px solid #30363D; border-radius: 8px; width: 38px; height: 38px; padding: 0; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-left: auto; }
+  .nav-burger span { width: 18px; height: 2px; background: #E6EDF3; display: block; border-radius: 2px; }
+
+  @media (max-width: 760px) {
+    nav .wrap { flex-wrap: wrap; padding: 12px 20px; }
+    .nav-burger { display: flex; }
+    nav .links { margin-left: 0; width: 100%; order: 3; flex-direction: column; align-items: flex-start; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.25s ease; }
+    nav .links.open { max-height: 320px; padding-top: 10px; }
+    nav .links a { width: 100%; padding: 10px 0; border-top: 1px solid #21262D; font-size: 15px; }
+    nav .links .lang-toggle { display: none; }
+    .nav-lang-toggle-mobile { display: flex; gap: 4px; }
+  }
+  @media (min-width: 761px) {
+    .nav-lang-toggle-mobile { display: none; }
+  }
 
   header.hero { padding: 80px 0 60px; position: relative; overflow: hidden; }
   .glow { position: absolute; width: 500px; height: 500px; background: #00E676; opacity: 0.06; border-radius: 50%; filter: blur(40px); top: -150px; right: -100px; pointer-events: none; }
@@ -103,18 +119,25 @@
       <img src="givlit-logo.png" alt="Givlit Logo" class="brand-logo" />
       Givlit
     </a>
-    <div class="links">
-      <a href="#features" class="lt-de">Funktionen</a>
-      <a href="#features" class="lt-en" style="display:none">Features</a>
-      <a href="#how" class="lt-de">So funktioniert's</a>
-      <a href="#how" class="lt-en" style="display:none">How it works</a>
-      <a href="#why" class="lt-de">Warum Givlit</a>
-      <a href="#why" class="lt-en" style="display:none">Why Givlit</a>
+    <div class="nav-lang-toggle-mobile lang-toggle">
+      <button class="active" id="langBtnDeMobile" onclick="setLang('de', this)">DE</button>
+      <button id="langBtnEnMobile" onclick="setLang('en', this)">EN</button>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="#features" class="lt-de" onclick="closeNav()">Funktionen</a>
+      <a href="#features" class="lt-en" style="display:none" onclick="closeNav()">Features</a>
+      <a href="#how" class="lt-de" onclick="closeNav()">So funktioniert's</a>
+      <a href="#how" class="lt-en" style="display:none" onclick="closeNav()">How it works</a>
+      <a href="#why" class="lt-de" onclick="closeNav()">Warum Givlit</a>
+      <a href="#why" class="lt-en" style="display:none" onclick="closeNav()">Why Givlit</a>
       <a href="privacy-policy.html" class="lt-de">Datenschutz</a>
       <a href="privacy-policy.html" class="lt-en" style="display:none">Privacy</a>
       <div class="lang-toggle">
-        <button class="active" onclick="setLang('de', this)">DE</button>
-        <button onclick="setLang('en', this)">EN</button>
+        <button class="active" id="langBtnDe" onclick="setLang('de', this)">DE</button>
+        <button id="langBtnEn" onclick="setLang('en', this)">EN</button>
       </div>
     </div>
   </div>
@@ -367,13 +390,15 @@
     document.querySelectorAll('.lang-block').forEach(function(el) {
       el.classList.remove('visible');
     });
-    ['hero','features','how','impact'].forEach(function(section) {
+    ['hero','features','how','why','impact'].forEach(function(section) {
       document.getElementById(section + '-' + lang).classList.add('visible');
     });
     document.querySelectorAll('.lang-toggle button').forEach(function(b) {
       b.classList.remove('active');
     });
-    btn.classList.add('active');
+    document.querySelectorAll('.lang-toggle button[onclick*="' + lang + '"]').forEach(function(b) {
+      b.classList.add('active');
+    });
 
     document.querySelectorAll('.lt-de').forEach(function(el) {
       el.style.display = lang === 'de' ? '' : 'none';
@@ -383,6 +408,13 @@
     });
 
     document.documentElement.lang = lang;
+  }
+
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('navLinks').classList.remove('open');
   }
 </script>
 
