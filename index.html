@@ -67,6 +67,14 @@
   .step h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
   .step p { font-size: 13px; color: #8B949E; }
 
+  section.why { padding: 70px 0; border-top: 1px solid #21262D; }
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 760px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card { background: #161B22; border: 1px solid #21262D; border-radius: 14px; padding: 22px 24px; display: flex; gap: 16px; align-items: flex-start; }
+  .why-icon { width: 38px; height: 38px; flex-shrink: 0; background: rgba(0,230,118,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .why-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .why-card p { font-size: 13.5px; color: #8B949E; }
+
   section.impact { padding: 70px 0; border-top: 1px solid #21262D; }
   .impact-card { background: linear-gradient(135deg, rgba(0,230,118,0.08), rgba(0,230,118,0.02)); border: 1px solid rgba(0,230,118,0.2); border-radius: 18px; padding: 48px; text-align: center; }
   .impact-card h2 { font-size: 26px; font-weight: 700; margin-bottom: 14px; }
@@ -100,6 +108,8 @@
       <a href="#features" class="lt-en" style="display:none">Features</a>
       <a href="#how" class="lt-de">So funktioniert's</a>
       <a href="#how" class="lt-en" style="display:none">How it works</a>
+      <a href="#why" class="lt-de">Warum Givlit</a>
+      <a href="#why" class="lt-en" style="display:none">Why Givlit</a>
       <a href="privacy-policy.html" class="lt-de">Datenschutz</a>
       <a href="privacy-policy.html" class="lt-en" style="display:none">Privacy</a>
       <div class="lang-toggle">
@@ -119,6 +129,7 @@
       <div class="eyebrow">🌱 Kostenlos &amp; nachhaltig</div>
       <h1>Verschenke es.<br><span>Rette den Planeten.</span></h1>
       <p class="subtitle">Givlit hilft dir, Dinge, die du nicht mehr brauchst, kostenlos an Menschen in deiner Nähe weiterzugeben — statt sie wegzuwerfen.</p>
+      <p class="soon-note" style="margin-bottom:24px;">Für immer kostenlos — eine optionale Mitgliedschaft bietet später nur zusätzlichen Komfort.</p>
       <div class="cta-row">
         <a href="#" class="btn btn-primary">📲 Bald im Play Store</a>
         <a href="#how" class="btn btn-secondary">So funktioniert's</a>
@@ -131,6 +142,7 @@
       <div class="eyebrow">🌱 Free &amp; sustainable</div>
       <h1>Give it away.<br><span>Save the planet.</span></h1>
       <p class="subtitle">Givlit helps you give away things you no longer need — for free, to people nearby — instead of throwing them out.</p>
+      <p class="soon-note" style="margin-bottom:24px;">Free forever — an optional membership will later add convenience, nothing more.</p>
       <div class="cta-row">
         <a href="#" class="btn btn-primary">📲 Coming soon to Play Store</a>
         <a href="#how" class="btn btn-secondary">How it works</a>
@@ -145,7 +157,7 @@
   <div class="wrap">
 
     <div class="lang-block visible" id="features-de">
-      <h2 class="section-title">Warum Givlit?</h2>
+      <h2 class="section-title">Funktionen</h2>
       <p class="section-sub">Einfach. Lokal. Nachhaltig.</p>
       <div class="feature-grid">
         <div class="feature-card">
@@ -167,7 +179,7 @@
     </div>
 
     <div class="lang-block" id="features-en">
-      <h2 class="section-title">Why Givlit?</h2>
+      <h2 class="section-title">Features</h2>
       <p class="section-sub">Simple. Local. Sustainable.</p>
       <div class="feature-grid">
         <div class="feature-card">
@@ -201,7 +213,7 @@
         <div class="step"><div class="step-num">1</div><h4>Foto aufnehmen</h4><p>Mach ein Bild vom Artikel, den du weitergeben möchtest.</p></div>
         <div class="step"><div class="step-num">2</div><h4>Kurz beschreiben</h4><p>Kategorie wählen, Beschreibung eingeben — fertig.</p></div>
         <div class="step"><div class="step-num">3</div><h4>In Kontakt treten</h4><p>Interessenten melden sich direkt über die App-Chatfunktion.</p></div>
-        <div class="step"><div class="step-num">4</div><h4>Abholen lassen</h4><p>Übergib den Artikel — kein Wegwerfen, kein Aufwand.</p></div>
+        <div class="step"><div class="step-num">4</div><h4>Abholen lassen</h4><p>Übergib den Artikel und sammle Grüne Punkte — kein Wegwerfen, kein Aufwand.</p></div>
       </div>
     </div>
 
@@ -212,7 +224,97 @@
         <div class="step"><div class="step-num">1</div><h4>Take a photo</h4><p>Snap a picture of the item you want to give away.</p></div>
         <div class="step"><div class="step-num">2</div><h4>Add a description</h4><p>Pick a category, write a short description — done.</p></div>
         <div class="step"><div class="step-num">3</div><h4>Get in touch</h4><p>Interested people message you directly via the in-app chat.</p></div>
-        <div class="step"><div class="step-num">4</div><h4>Hand it over</h4><p>Give the item away — no waste, no hassle.</p></div>
+        <div class="step"><div class="step-num">4</div><h4>Hand it over</h4><p>Give the item away and earn Green Points — no waste, no hassle.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+
+    <div class="lang-block visible" id="why-de">
+      <h2 class="section-title">Warum Givlit?</h2>
+      <p class="section-sub">Das unterscheidet uns von anderen Plattformen</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">📊</div>
+          <div>
+            <h3>Wissenschaftlicher CO₂-Rechner</h3>
+            <p>Jeder Artikel erhält einen echten CO₂-Wert, basierend auf ecoinvent/IPCC-Emissionsfaktoren.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌳</div>
+          <div>
+            <h3>Echte Baumpflanzung</h3>
+            <p>Ab 750 Green-Score-Punkten (≈375 kg CO₂-Ersparnis) pflanzen wir einen echten Baum in deinem Namen.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🆓</div>
+          <div>
+            <h3>Immer kostenlos</h3>
+            <p>Einstellen, Stöbern, Chat sowie der CO₂- und Green-Score-Rechner sind dauerhaft kostenlos.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🇩🇪</div>
+          <div>
+            <h3>Deutschlandorientiert &amp; DSGVO-nativ</h3>
+            <p>Speziell für den DACH-Markt entwickelt und von Anfang an vollständig DSGVO-konform.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏆</div>
+          <div>
+            <h3>Rangsystem</h3>
+            <p>Öko-Starter → Grüner Helfer → Planeten-Retter → Klima-Held → Erd-Hüter — gib öfter weiter, steig im Rang auf.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-block" id="why-en">
+      <h2 class="section-title">Why Givlit?</h2>
+      <p class="section-sub">What sets us apart from other platforms</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">📊</div>
+          <div>
+            <h3>Scientific CO₂ calculator</h3>
+            <p>Every item gets a real CO₂ value based on ecoinvent/IPCC emission factors.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌳</div>
+          <div>
+            <h3>Real tree planting</h3>
+            <p>At 750 Green Score points (≈375 kg CO₂ saved), we plant a real tree in your name.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🆓</div>
+          <div>
+            <h3>Always free</h3>
+            <p>Listing, browsing, chat, and the CO₂/Green Score system are permanently free.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🇩🇪</div>
+          <div>
+            <h3>German-first &amp; GDPR-native</h3>
+            <p>Built specifically for the DE/AT/CH market, fully DSGVO-compliant from day one.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏆</div>
+          <div>
+            <h3>Rank system</h3>
+            <p>Eco Starter → Green Helper → Planet Saver → Climate Hero → Earth Guardian — reuse more, climb the ranks.</p>
+          </div>
+        </div>
       </div>
     </div>
 
