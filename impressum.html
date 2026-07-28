@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Givlit</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0D1117;
+      color: #E6EDF3;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    header {
+      background: #161B22;
+      border-bottom: 1px solid #30363D;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-dot {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: block;
+    }
+    header h1 { font-size: 20px; font-weight: 600; color: #E6EDF3; }
+    header span { font-size: 13px; color: #8B949E; margin-left: auto; }
+
+    .lang-switch {
+      max-width: 780px; margin: 1.5rem auto 0; padding: 0 2rem;
+      display: flex; gap: 8px;
+    }
+    .lang-btn {
+      padding: 6px 16px; border-radius: 6px; border: 1px solid #30363D;
+      background: #161B22; color: #8B949E; font-size: 13px; cursor: pointer;
+    }
+    .lang-btn.active { background: #00E676; color: #0D1117; border-color: #00E676; font-weight: 600; }
+
+    main { max-width: 780px; margin: 2rem auto 4rem; padding: 0 2rem; }
+
+    .lang-block { display: none; }
+    .lang-block.visible { display: block; }
+
+    h2 { font-size: 22px; font-weight: 600; color: #E6EDF3; margin: 2rem 0 0.5rem; border-bottom: 1px solid #21262D; padding-bottom: 0.5rem; }
+    p  { color: #C9D1D9; margin: 0.5rem 0; white-space: pre-line; }
+    a  { color: #00E676; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .card {
+      background: #161B22;
+      border: 1px solid #30363D;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    .card p { margin: 0; }
+
+    .placeholder {
+      background: rgba(255,196,0,0.08);
+      border: 1px dashed #C4A000;
+      color: #E3B341;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+
+    .updated {
+      font-size: 12px; color: #8B949E;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #8B949E;
+      padding: 2rem;
+      border-top: 1px solid #21262D;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="givlit-logo.png" alt="Givlit Logo" class="logo-dot" />
+  <h1>Givlit</h1>
+  <span>Impressum / Legal Notice</span>
+</header>
+
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="switchLang('de', this)">🇩🇪 Deutsch</button>
+  <button class="lang-btn" onclick="switchLang('en', this)">🇬🇧 English</button>
+</div>
+
+<main>
+
+  <!-- ───────────── GERMAN ───────────── -->
+  <div class="lang-block visible" id="lang-de">
+    <p class="updated">Zuletzt aktualisiert: Juli 2026</p>
+
+    <div class="card">
+      <p>Givlit ist eine Plattform für das kostenlose Verschenken von Gebrauchsgegenständen mit Fokus auf Nachhaltigkeit und Umweltschutz.</p>
+    </div>
+
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <p>Givlit
+Refik Yilmaz
+c/o Panus
+Brücken Str. 51
+60594 Frankfurt am Main
+Deutschland</p>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:support@givlit.de">support@givlit.de</a>
+Website: <a href="https://www.givlit.de">www.givlit.de</a></p>
+
+    <h2>Umsatzsteuer-ID</h2>
+    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: <span class="placeholder">[wird nach Registrierung ergänzt]</span></p>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
+Refik Yilmaz
+c/o Panus, Brücken Str. 51, 60594 Frankfurt am Main</p>
+
+    <h2>Haftungsausschluss</h2>
+    <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+
+Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+
+    <h2>Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>
+
+Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  </div>
+
+  <!-- ───────────── ENGLISH ───────────── -->
+  <div class="lang-block" id="lang-en">
+    <p class="updated">Last updated: July 2026</p>
+
+    <div class="card">
+      <p>Givlit is a platform for giving away used items for free, with a focus on sustainability and environmental protection.</p>
+    </div>
+
+    <h2>Information pursuant to § 5 DDG</h2>
+    <p>Givlit
+Refik Yilmaz
+c/o Panus
+Brücken Str. 51
+60594 Frankfurt am Main
+Germany</p>
+
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:support@givlit.de">support@givlit.de</a>
+Website: <a href="https://www.givlit.de">www.givlit.de</a></p>
+
+    <h2>VAT ID</h2>
+    <p>VAT identification number pursuant to §27a of the German Sales Tax Law: <span class="placeholder">[to be added after registration]</span></p>
+
+    <h2>Responsible for content</h2>
+    <p>Responsible for content pursuant to § 18 para. 2 MStV:
+Refik Yilmaz
+c/o Panus, Brücken Str. 51, 60594 Frankfurt am Main</p>
+
+    <h2>Disclaimer</h2>
+    <p>The contents of our pages were created with the greatest care. However, we cannot guarantee the accuracy, completeness, and timeliness of the content.
+
+As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 para. 1 DDG. However, pursuant to §§ 8 to 10 DDG, we are not obligated as a service provider to monitor transmitted or stored third-party information.</p>
+
+    <h2>Dispute Resolution</h2>
+    <p>The European Commission provides a platform for online dispute resolution (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>
+
+We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Givlit · <a href="privacy-policy.html">Datenschutz</a> · <a href="mailto:support@givlit.de">support@givlit.de</a>
+</footer>
+
+<script>
+  function switchLang(lang, btn) {
+    document.querySelectorAll('.lang-block').forEach(b => b.classList.remove('visible'));
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('visible');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
