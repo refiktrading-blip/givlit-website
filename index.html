@@ -100,6 +100,15 @@
   .stat-num { font-size: 28px; font-weight: 700; color: #00E676; }
   .stat-label { font-size: 13px; color: #8B949E; margin-top: 4px; }
 
+  section.faq { padding: 70px 0; border-top: 1px solid #21262D; }
+  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  details.faq-item { background: #161B22; border: 1px solid #21262D; border-radius: 12px; padding: 0 20px; }
+  details.faq-item summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 600; font-size: 15px; color: #E6EDF3; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary::after { content: '+'; color: #00E676; font-size: 22px; font-weight: 400; flex-shrink: 0; transition: transform 0.2s ease; }
+  details.faq-item[open] summary::after { transform: rotate(45deg); }
+  details.faq-item .faq-answer { color: #8B949E; font-size: 14px; line-height: 1.65; padding: 0 0 18px; white-space: pre-line; }
+
   footer { border-top: 1px solid #21262D; padding: 40px 0; margin-top: 40px; }
   .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
@@ -133,6 +142,8 @@
       <a href="#how" class="lt-en" style="display:none" onclick="closeNav()">How it works</a>
       <a href="#why" class="lt-de" onclick="closeNav()">Warum Givlit</a>
       <a href="#why" class="lt-en" style="display:none" onclick="closeNav()">Why Givlit</a>
+      <a href="#faq" class="lt-de" onclick="closeNav()">FAQ</a>
+      <a href="#faq" class="lt-en" style="display:none" onclick="closeNav()">FAQ</a>
       <a href="privacy-policy.html" class="lt-de">Datenschutz</a>
       <a href="privacy-policy.html" class="lt-en" style="display:none">Privacy</a>
       <a href="impressum.html" class="lt-de">Impressum</a>
@@ -376,6 +387,90 @@
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+
+    <div class="lang-block visible" id="faq-de">
+      <h2 class="section-title">Häufige Fragen</h2>
+      <p class="section-sub">Alles zu Punkten, Baumpflanzung und Rangsystem</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Wie werden die Green-Score-Punkte berechnet?</summary>
+          <p class="faq-answer">Jeder Artikel bekommt einen CO₂-Wert (siehe nächste Frage). Deine Punkte als Verschenker: Punkte = max(1, gerundet(CO₂-Wert in kg × 2)). Ein USB-Kabel bringt so nur 1 Punkt, ein Sofa etwa 170 Punkte, ein Laptop rund 529 Punkte. Wer den Artikel annimmt, erhält zusätzlich ein Drittel der Verschenker-Punkte (aufgerundet).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Nach welchem Standard wird der CO₂-Wert berechnet?</summary>
+          <p class="faq-answer">Unser CO₂-Rechner nutzt vier Berechnungspfade je nach Artikeltyp: Für rund 29 gelistete Elektronikgeräte (Smartphone, Laptop, TV usw.) verwenden wir feste Werte auf Basis veröffentlichter Hersteller-Umweltproduktdeklarationen (EPDs), ecoinvent 3.9 und IPCC AR6 WGIII – Produktionsemissionen, cradle-to-gate. Für Großgeräte (Waschmaschine, Kühlschrank usw.) schätzen wir das Gerätegewicht, u. a. gestützt auf EU-JRC-Studien, und multiplizieren es mit einem materialbasierten Faktor (Quelle: ecoinvent 3.9, EU-JRC-Ecodesign-Hintergrundstudien). Für alle übrigen Artikel (Möbel, Kleidung, Küche usw.) gilt Gewicht × Material-Faktor nach branchenüblichen Durchschnittswerten (ISO 14040, ecoinvent 3.9).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Warum wird nicht der volle Herstellungsfußabdruck angezeigt?</summary>
+          <p class="faq-answer">Wir rechnen bewusst konservativ: Auf jedes Ergebnis addieren wir zunächst einen Transportzuschlag von 8&nbsp;% für den Herstellungs- und Vertriebsweg. Danach zeigen wir nur 70&nbsp;% dieses Werts als tatsächlich vermiedene Emission an – nicht den vollen Fußabdruck der Erstproduktion. So bleibt die angezeigte Zahl eine vorsichtige Schätzung dessen, was durch die Weitergabe wirklich eingespart wird, statt eine Bestmarke zu behaupten.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Wie funktioniert der Climate-Hero-Meilenstein (Baumpflanzung)?</summary>
+          <p class="faq-answer">Du erreichst "Climate Hero", sobald du mindestens 750 Green-Score-Punkte gesammelt UND mindestens 3 Artikel erfolgreich weitergegeben hast. Beide Bedingungen müssen erfüllt sein – nicht nur eine.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was, wenn ich 750 Punkte schon mit einem einzigen Artikel erreiche?</summary>
+          <p class="faq-answer">Manche großen oder elektronischen Artikel (z. B. ein Fernseher oder PC) bringen allein schon über 750 Punkte. Damit die Baumpflanzung echtes, wiederholtes Engagement widerspiegelt und nicht nur einen einzigen Gegenstand belohnt, brauchst du zusätzlich mindestens 3 weitergegebene Artikel insgesamt. Reicht ein Artikel für die Punktzahl, gibst du einfach 2 weitere dazu.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Wann wird der Baum tatsächlich gepflanzt?</summary>
+          <p class="faq-answer">Die Baumpflanzung wird über Givlit Premium finanziert, das noch nicht verfügbar ist. Bereits erreichte Meilensteine werden gespeichert und rückwirkend eingelöst, sobald Premium startet. Ab dann erfolgt die eigentliche Pflanzung nicht sofort, sondern gesammelt zu den realen Pflanzsaisons unserer Aufforstungspartner – im Frühjahr (März–April) und im Herbst (Oktober–November). So haben die jungen Setzlinge die besten Überlebenschancen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was ist das Rangsystem?</summary>
+          <p class="faq-answer">Mit steigendem Green Score steigst du im Rang auf: Öko-Starter → Grüner Helfer → Planeten-Retter → Klima-Held → Erd-Hüter. Je mehr du weitergibst, desto höher dein Rang.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Ist Givlit wirklich kostenlos?</summary>
+          <p class="faq-answer">Ja. Einstellen, Stöbern, Chat sowie der CO₂- und Green-Score-Rechner sind dauerhaft und vollständig kostenlos – daran ändert sich auch mit Givlit Premium nichts.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="lang-block" id="faq-en">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything about points, tree planting, and the rank system</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How are Green Score points calculated?</summary>
+          <p class="faq-answer">Every item gets a CO₂ value (see next question). Your points as the giver: points = max(1, round(CO₂ value in kg × 2)). A USB cable earns just 1 point, a sofa around 170 points, a laptop around 529 points. Whoever receives the item also gets a third of the giver's points (rounded up).</p>
+        </details>
+        <details class="faq-item">
+          <summary>What standard is the CO₂ value based on?</summary>
+          <p class="faq-answer">Our CO₂ calculator uses four calculation paths depending on item type. For around 29 listed electronics items (smartphone, laptop, TV, etc.), we use fixed values based on published manufacturer Environmental Product Declarations (EPDs), ecoinvent 3.9, and IPCC AR6 WGIII – production emissions, cradle-to-gate. For large appliances (washing machine, fridge, etc.), we estimate appliance weight, partly based on EU JRC studies, and multiply it by a material-based factor (source: ecoinvent 3.9, EU JRC Ecodesign background studies). For everything else (furniture, clothing, kitchenware, etc.), we use weight × material factor based on industry-average figures (ISO 14040, ecoinvent 3.9).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Why isn't the full manufacturing footprint shown?</summary>
+          <p class="faq-answer">We calculate conservatively on purpose: every result first gets an 8&nbsp;% transport surcharge for the original manufacturing and distribution chain. We then show only 70&nbsp;% of that value as the emissions actually avoided – not the full footprint of original production. This keeps the displayed number a cautious estimate of what reuse genuinely saves, rather than an inflated best-case claim.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does the Climate Hero milestone (tree planting) work?</summary>
+          <p class="faq-answer">You reach "Climate Hero" once you've collected at least 750 Green Score points AND given away at least 3 items successfully. Both conditions must be met – not just one.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I reach 750 points with just one item?</summary>
+          <p class="faq-answer">Some large or electronic items (e.g. a TV or PC) can exceed 750 points on their own. So the tree planting reflects genuine, repeated engagement rather than rewarding a single item, you also need at least 3 given-away items in total. If one item already covers the points, you simply give away 2 more.</p>
+        </details>
+        <details class="faq-item">
+          <summary>When is the tree actually planted?</summary>
+          <p class="faq-answer">Tree planting is funded through Givlit Premium, which isn't available yet. Milestones already reached are saved and honored retroactively once Premium launches. From then on, the actual planting doesn't happen immediately, but in batches during our reforestation partners' real planting seasons – spring (March–April) and autumn (October–November) – giving young saplings the best chance of survival.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is the rank system?</summary>
+          <p class="faq-answer">As your Green Score grows, you climb the ranks: Eco Starter → Green Helper → Planet Saver → Climate Hero → Earth Guardian. The more you give away, the higher your rank.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Givlit really free?</summary>
+          <p class="faq-answer">Yes. Listing, browsing, chat, and the CO₂/Green Score calculator are permanently and fully free – that won't change with Givlit Premium either.</p>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <footer>
   <div class="wrap footer-row">
     <div class="footer-copy">© 2026 Givlit · Frankfurt am Main, Germany</div>
@@ -394,7 +489,7 @@
     document.querySelectorAll('.lang-block').forEach(function(el) {
       el.classList.remove('visible');
     });
-    ['hero','features','how','why','impact'].forEach(function(section) {
+    ['hero','features','how','why','impact','faq'].forEach(function(section) {
       document.getElementById(section + '-' + lang).classList.add('visible');
     });
     document.querySelectorAll('.lang-toggle button').forEach(function(b) {
