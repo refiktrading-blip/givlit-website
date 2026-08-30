@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konto löschen – Givlit</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0D1117;
+      color: #E6EDF3;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    header {
+      background: #161B22;
+      border-bottom: 1px solid #30363D;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-dot { width: 36px; height: 36px; border-radius: 10px; display: block; }
+    header h1 { font-size: 20px; font-weight: 600; color: #E6EDF3; }
+    header span { font-size: 13px; color: #8B949E; margin-left: auto; }
+
+    .lang-switch {
+      max-width: 780px; margin: 1.5rem auto 0; padding: 0 2rem;
+      display: flex; gap: 8px;
+    }
+    .lang-btn {
+      padding: 6px 16px; border-radius: 6px; border: 1px solid #30363D;
+      background: #161B22; color: #8B949E; font-size: 13px; cursor: pointer;
+    }
+    .lang-btn.active { background: #00E676; color: #0D1117; border-color: #00E676; font-weight: 600; }
+
+    main { max-width: 780px; margin: 2rem auto 4rem; padding: 0 2rem; }
+
+    .lang-block { display: none; }
+    .lang-block.visible { display: block; }
+
+    h2 { font-size: 22px; font-weight: 600; color: #E6EDF3; margin: 2rem 0 0.5rem; border-bottom: 1px solid #21262D; padding-bottom: 0.5rem; }
+    h3 { font-size: 16px; font-weight: 600; color: #E6EDF3; margin: 1.5rem 0 0.4rem; }
+    p  { color: #C9D1D9; margin: 0.5rem 0; }
+    ul, ol { color: #C9D1D9; padding-left: 1.4rem; margin: 0.5rem 0; }
+    ul li, ol li { margin-bottom: 6px; }
+    a  { color: #00E676; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .card {
+      background: #161B22;
+      border: 1px solid #30363D;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    .card p { margin: 0; }
+
+    .warning {
+      background: rgba(255, 138, 0, 0.08);
+      border: 1px solid rgba(255, 138, 0, 0.35);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    .warning p { margin: 0; color: #FFB86B; }
+
+    .form-box {
+      background: #161B22;
+      border: 1px solid #30363D;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      color: #8B949E;
+      margin-bottom: 6px;
+      margin-top: 14px;
+    }
+    label:first-child { margin-top: 0; }
+    input[type="email"], input[type="text"], textarea {
+      width: 100%;
+      background: #0D1117;
+      border: 1px solid #30363D;
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: #E6EDF3;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    textarea { resize: vertical; min-height: 80px; }
+    .submit-btn {
+      margin-top: 18px;
+      background: #00E676;
+      color: #0D1117;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .submit-btn:hover { opacity: 0.9; }
+
+    .updated { font-size: 12px; color: #8B949E; margin-bottom: 1.5rem; }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #8B949E;
+      padding: 2rem;
+      border-top: 1px solid #21262D;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="givlit-logo.png" alt="Givlit Logo" class="logo-dot" />
+  <h1>Givlit</h1>
+  <span>Konto löschen / Delete Account</span>
+</header>
+
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="switchLang('de', this)">🇩🇪 Deutsch</button>
+  <button class="lang-btn" onclick="switchLang('en', this)">🇬🇧 English</button>
+</div>
+
+<main>
+
+  <!-- ───────────── GERMAN ───────────── -->
+  <div class="lang-block visible" id="lang-de">
+    <p class="updated">Zuletzt aktualisiert: August 2026</p>
+
+    <div class="card">
+      <p>Diese Seite erklärt, wie du dein Givlit-Konto und die zugehörigen Daten löschen kannst – auch ohne die App zu installieren.</p>
+    </div>
+
+    <h2>Option 1: Löschung in der App</h2>
+    <p>Öffne die Givlit-App und gehe zu <strong>Profil → Einstellungen → Konto löschen</strong>. Dein Konto wird sofort dauerhaft gelöscht.</p>
+
+    <h2>Option 2: Löschung ohne die App</h2>
+    <p>Falls du die App nicht mehr installiert hast, kannst du die Löschung über das folgende Formular beantragen. Bitte nutze die E-Mail-Adresse, mit der dein Konto registriert wurde.</p>
+
+    <div class="form-box">
+      <form action="mailto:support@givlit.de" method="post" enctype="text/plain">
+        <label for="email-de">E-Mail-Adresse deines Kontos</label>
+        <input type="email" id="email-de" name="E-Mail" required placeholder="deine@email.de">
+
+        <label for="reason-de">Grund (optional)</label>
+        <textarea id="reason-de" name="Grund" placeholder="Optional: Warum möchtest du dein Konto löschen?"></textarea>
+
+        <button type="submit" class="submit-btn">Löschantrag senden</button>
+      </form>
+      <p style="margin-top: 12px; font-size: 12px;">Öffnet dein E-Mail-Programm mit einer vorausgefüllten Nachricht an <a href="mailto:support@givlit.de">support@givlit.de</a>. Alternativ kannst du uns auch direkt eine E-Mail mit Betreff „Kontolöschung" schreiben.</p>
+    </div>
+
+    <h2>Was wird gelöscht?</h2>
+    <ul>
+      <li>Dein Profil (Name, Profilbild, E-Mail-Adresse)</li>
+      <li>Alle von dir eingestellten Artikel und Fotos</li>
+      <li>Deine Nachrichten im Chat</li>
+      <li>Dein Green Score, Punktestand und Abzeichen</li>
+      <li>Standortdaten und Geräte-Token für Push-Benachrichtigungen</li>
+    </ul>
+
+    <div class="warning">
+      <p><strong>Hinweis:</strong> Die Löschung ist endgültig und kann nicht rückgängig gemacht werden. Nach Bearbeitung deines Antrags (in der Regel innerhalb von 30 Tagen bei Anfragen über dieses Formular) werden alle personenbezogenen Daten unwiderruflich aus unseren Systemen entfernt.</p>
+    </div>
+
+    <h2>Aufbewahrung nach Löschung</h2>
+    <p>Einige Daten können aus gesetzlichen Gründen (z. B. handels- oder steuerrechtliche Aufbewahrungspflichten) über die Kontolöschung hinaus in anonymisierter oder aggregierter Form gespeichert bleiben. Diese Daten lassen keinen Rückschluss mehr auf deine Person zu.</p>
+
+    <h2>Fragen?</h2>
+    <p>Bei Fragen zur Löschung deines Kontos wende dich an: <a href="mailto:support@givlit.de">support@givlit.de</a></p>
+    <p>Weitere Informationen zur Datenverarbeitung findest du in unserer <a href="privacy-policy.html">Datenschutzerklärung</a>.</p>
+  </div>
+
+  <!-- ───────────── ENGLISH ───────────── -->
+  <div class="lang-block" id="lang-en">
+    <p class="updated">Last updated: August 2026</p>
+
+    <div class="card">
+      <p>This page explains how to delete your Givlit account and associated data — even without installing the app.</p>
+    </div>
+
+    <h2>Option 1: Delete within the app</h2>
+    <p>Open the Givlit app and go to <strong>Profile → Settings → Delete Account</strong>. Your account will be permanently deleted immediately.</p>
+
+    <h2>Option 2: Delete without the app</h2>
+    <p>If you no longer have the app installed, you can request deletion using the form below. Please use the email address your account was registered with.</p>
+
+    <div class="form-box">
+      <form action="mailto:support@givlit.de" method="post" enctype="text/plain">
+        <label for="email-en">Your account email address</label>
+        <input type="email" id="email-en" name="Email" required placeholder="you@email.com">
+
+        <label for="reason-en">Reason (optional)</label>
+        <textarea id="reason-en" name="Reason" placeholder="Optional: why are you deleting your account?"></textarea>
+
+        <button type="submit" class="submit-btn">Send deletion request</button>
+      </form>
+      <p style="margin-top: 12px; font-size: 12px;">Opens your email client with a pre-filled message to <a href="mailto:support@givlit.de">support@givlit.de</a>. Alternatively, you can email us directly with the subject "Account Deletion."</p>
+    </div>
+
+    <h2>What gets deleted?</h2>
+    <ul>
+      <li>Your profile (name, profile picture, email address)</li>
+      <li>All listings and photos you've posted</li>
+      <li>Your chat messages</li>
+      <li>Your Green Score, points, and badges</li>
+      <li>Location data and device token for push notifications</li>
+    </ul>
+
+    <div class="warning">
+      <p><strong>Note:</strong> Deletion is permanent and cannot be undone. Once your request is processed (typically within 30 days for requests submitted via this form), all personal data is irreversibly removed from our systems.</p>
+    </div>
+
+    <h2>Retention after deletion</h2>
+    <p>Some data may be retained beyond account deletion in anonymised or aggregated form where required by law (e.g. commercial or tax record-keeping obligations). This data can no longer be linked back to you.</p>
+
+    <h2>Questions?</h2>
+    <p>If you have questions about deleting your account, contact: <a href="mailto:support@givlit.de">support@givlit.de</a></p>
+    <p>For more on how we handle your data, see our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Givlit · <a href="impressum.html">Impressum</a> · <a href="privacy-policy.html">Datenschutz</a> · <a href="mailto:support@givlit.de">support@givlit.de</a>
+</footer>
+
+<script>
+  function switchLang(lang, btn) {
+    document.querySelectorAll('.lang-block').forEach(b => b.classList.remove('visible'));
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('visible');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
