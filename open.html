@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Givlit</title>
+<style>
+  :root {
+    --bg: #f6f8f7;
+    --card: #ffffff;
+    --text: #14201a;
+    --muted: #5b6b62;
+    --accent: #00e676;
+    --accent-text: #06210f;
+    --border: #dfe6e2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --border: #30363d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+  }
+  main {
+    width: 100%;
+    max-width: 380px;
+    padding: 32px 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    text-align: center;
+  }
+  .leaf { font-size: 40px; line-height: 1; margin-bottom: 16px; }
+  h1 { margin: 0 0 8px; font-size: 22px; font-weight: 700; }
+  p { margin: 0 0 20px; font-size: 15px; }
+  .en { color: var(--muted); font-size: 14px; }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 4px 0 20px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 14px;
+  }
+  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .hint { margin: 0; color: var(--muted); font-size: 13px; }
+  .hint + .hint { margin-top: 6px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <div class="leaf" aria-hidden="true">🌿</div>
+
+  <section id="ok" hidden>
+    <h1>Givlit öffnen</h1>
+    <p>Tippe auf den Button, um in der App weiterzumachen.</p>
+    <p class="en">Tap the button to continue in the app.</p>
+    <a id="open" class="btn" href="#">Givlit öffnen / Open Givlit</a>
+    <p class="hint">Nichts passiert? Öffne diese Seite auf dem Handy, auf dem Givlit installiert ist.</p>
+    <p class="hint">Nothing happens? Open this page on the phone where Givlit is installed.</p>
+  </section>
+
+  <section id="bad" hidden>
+    <h1>Link ungültig</h1>
+    <p>Dieser Link ist nicht vollständig. Fordere in der App einen neuen an.</p>
+    <p class="en">This link isn’t complete. Request a new one in the app.</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  // The token travels in the URL fragment (#...), which browsers never send
+  // to the server, so it does not end up in givlit.de access logs.
+  var raw = location.hash ? location.hash.slice(1) : location.search.slice(1);
+  var params = new URLSearchParams(raw);
+  var type = params.get('type');
+  var tokenHash = params.get('token_hash');
+
+  // Hosts must match what the app's Android intent filter / deep-link handler expects.
+  var hosts = { recovery: 'reset-callback', signup: 'login-callback' };
+
+  var valid = hosts.hasOwnProperty(type) && tokenHash && /^[A-Za-z0-9_-]{10,200}$/.test(tokenHash);
+
+  if (!valid) {
+    document.getElementById('bad').hidden = false;
+    return;
+  }
+
+  var target = 'io.supabase.givlit://' + hosts[type] + '/?token_hash=' +
+               encodeURIComponent(tokenHash) + '&type=' + encodeURIComponent(type);
+
+  document.getElementById('ok').hidden = false;
+  document.getElementById('open').setAttribute('href', target);
+
+  // Try to open the app automatically; the button is the fallback because
+  // some browsers only allow app links after a tap.
+  setTimeout(function () { window.location.href = target; }, 400);
+})();
+</script>
+</body>
+</html>
